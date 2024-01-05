@@ -139,6 +139,7 @@ body {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -151,6 +152,7 @@ select {
   outline: none;
   background: transparent;
   border: none;
+  color: inherit;
 }
 
 button {

@@ -4,8 +4,11 @@ html {
 }
 
 body {
+  color: var(--text-color);
   font-size: 1.6rem;
   font-family: "Gordita", sans-serif;
 }
 
-
+.icon {
+  filter: var(--icon-color);
+}

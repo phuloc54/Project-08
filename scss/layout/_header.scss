@@ -1,0 +1,87 @@
+@use "../abstracts/mixins" as mx;
+
+%flexItemCenterY {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  background: var(--header-bg-color);
+
+  @include mx.breakpoint(lg) {
+    background: red;
+  }
+}
+
+.top-bar {
+  @extend %flexItemCenterY;
+  padding: 30px 0;
+}
+
+.nav {
+  margin-left: 144px;
+
+  &__menu {
+    display: flex;
+    column-gap: 30px;
+  }
+
+  &__link {
+    @extend %flexItemCenterY;
+    gap: 6px;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+    img {
+      margin-top: 3px;
+    }
+  }
+}
+
+.top-act {
+  display: flex;
+  margin-left: auto;
+  column-gap: 30px;
+
+  &__group {
+    @extend %flexItemCenterY;
+    min-width: 50px;
+    height: 50px;
+
+    border-radius: 8px;
+    background: var(--top-cta-group-color);
+    box-shadow: 0px 20px 60px 10px var(--top-cta-group-shadow);
+  }
+
+  &__btn {
+    @extend %flexItemCenterY;
+    column-gap: 10px;
+    padding: 13px 20px;
+  }
+
+  &__btn--single {
+    padding: 13px;
+  }
+
+  &__separate {
+    width: 2px;
+    height: 30px;
+    background: var(--top-cta-group-separate);
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+  }
+
+  &__avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
