@@ -1,0 +1,150 @@
+@use "../abstracts/mixins" as mx;
+.dropdown {
+  position: absolute;
+  width: min(1240px, 100%);
+  left: 0;
+  padding-top: 54px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  &__inner {
+    --inner-padding: 30px;
+
+    position: relative;
+    background: var(--dropdown-bg-color);
+    padding: var(--inner-padding);
+    max-height: var(--inner-max-height);
+    border-radius: 20px;
+    box-shadow: 0px 40px 90px 20px var(--dropdown-shadow);
+
+    &::before {
+      position: absolute;
+      content: url("../icon/dropdown-arrow.svg");
+      top: -14px;
+      left: var(--arrow-left-pos);
+      translate: -50%;
+      filter: var(--dropdown-arrow-icon-color);
+    }
+  }
+}
+
+.top-menu {
+  position: relative;
+  &__main {
+    --top-menu-main-width: 292px;
+    width: var(--top-menu-main-width);
+    height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+
+    border-right: 1px solid var(--top-menu-border-color);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 1.5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid darkgrey;
+    }
+  }
+}
+
+.menu-column {
+  display: flex;
+  column-gap: 14px;
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  + .menu-column {
+    margin-top: 19px;
+  }
+
+  &__icons {
+    position: relative;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+
+    @include mx.screen(xl) {
+      display: none;
+    }
+  }
+
+  &__icon-1 {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  &__icon-2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: var(--cate-icon-color);
+  }
+
+  &__title {
+    flex-grow: 1;
+    font-weight: 500;
+    margin-top: 4px;
+    line-height: 1.5; /* 150% */
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &__item:hover > &__link {
+    color: #0071dc;
+    font-weight: 500;
+  }
+
+  &__link {
+    display: block;
+    padding: 7px 0;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.42; /* 142.857% */
+  }
+
+  &__item:hover .sub-menu {
+    display: grid;
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--top-menu-main-width);
+  height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+  padding-left: 30px;
+
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 77px;
+
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 1.5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid darkgrey;
+  }
+}

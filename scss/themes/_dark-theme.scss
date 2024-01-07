@@ -1,9 +1,23 @@
 html.dark {
   --text-color: #fff;
-  --icon-color: brightness(0) saturate(100%) invert(93%) sepia(100%) saturate(0%) hue-rotate(248deg) brightness(106%) contrast(106%);;
+  --icon-color: brightness(0) saturate(100%) invert(93%) sepia(100%) saturate(0%)
+    hue-rotate(248deg) brightness(106%) contrast(106%);
+  --body-bg: #292e39;
   --text-logo-color: #fff;
-  --header-bg-color: #171C28;
-  --top-cta-group-color: #292E39;
-  --top-cta-group-shadow: rgba(0, 0, 0, 0.20);
+  --header-bg-color: #171c28;
+  --top-cta-group-color: #292e39;
+  --top-cta-group-shadow: rgba(0, 0, 0, 0.2);
   --top-cta-group-separate: #ededf6;
+  --header-bg-color-mobile: #171c28;
+
+  // Dropdown
+  --dropdown-bg-color: #323d55;
+  --dropdown-arrow-icon-color: brightness(0) saturate(100%) invert(19%) sepia(9%)
+    saturate(2457%) hue-rotate(183deg) brightness(95%) contrast(85%);
+  --dropdown-shadow: rgba(23, 28, 40, 0.4);
+
+  // Top menu
+  --top-menu-border-color: #171c28;
+  --cate-icon-color: brightness(0) saturate(100%) invert(93%) sepia(7%) saturate(54%)
+    hue-rotate(203deg) brightness(104%) contrast(98%);
 }
