@@ -20,4 +20,16 @@ html.dark {
   --top-menu-border-color: #171c28;
   --cate-icon-color: brightness(0) saturate(100%) invert(93%) sepia(7%) saturate(54%)
     hue-rotate(203deg) brightness(104%) contrast(98%);
+
+  // cate - Categories
+  --cate-price-color: #fff;
+  --cate-bg-color: #171c28;
+
+  // Product
+  --product-item-bg-color: #171c28;
+  --product-shadow-bg-color: rgba(0, 0, 0, 0.2);
+  --product-filter-text-color: #fff;
+  --filter-button-bg-color: #171c28;
+  --product-favorite-button-bg-color: #292e39;
+  --product-favorite-shadow-color: rgba(124, 124, 124, 0.2);
 }

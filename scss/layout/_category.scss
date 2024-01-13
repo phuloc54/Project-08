@@ -1,0 +1,16 @@
+.cate {
+  margin-top: 40px;
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 141.667%;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 51px;
+    margin-top: 20px;
+  }
+}
