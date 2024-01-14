@@ -8,6 +8,16 @@
   opacity: 0;
   transition: all 0.3s ease;
 
+  @include mx.screen(lg) {
+    position: initial;
+    padding-top: 0;
+
+    // Css này để phục vụ cho việc responsive cho <= ipad
+    // khi làm xong thì delete
+    visibility: visible;
+    opacity: 1;
+  }
+
   &__inner {
     --inner-padding: 30px;
 
@@ -25,6 +35,18 @@
       left: var(--arrow-left-pos);
       translate: -50%;
       filter: var(--dropdown-arrow-icon-color);
+
+      @include mx.screen(lg) {
+        content: none;
+      }
+    }
+
+    @include mx.screen(lg) {
+      padding: 0 40px;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      height: auto;
     }
   }
 }
@@ -39,6 +61,10 @@
     border-right: 1px solid var(--top-menu-border-color);
     overflow-y: auto;
 
+    @include mx.screen(lg) {
+      height: auto;
+    }
+
     &::-webkit-scrollbar {
       width: 1.5px;
     }
@@ -50,6 +76,10 @@
     &::-webkit-scrollbar-thumb {
       background-color: darkgrey;
       outline: 1px solid darkgrey;
+    }
+
+    @include mx.screen(lg) {
+      border-right: none;
     }
   }
 }
@@ -66,6 +96,10 @@
     margin-top: 19px;
   }
 
+  @include mx.screen(lg) {
+    margin-top: 15px;
+  }
+
   &__icons {
     position: relative;
     flex-shrink: 0;
@@ -74,6 +108,10 @@
 
     @include mx.screen(xl) {
       display: none;
+    }
+
+    @include mx.screen(lg) {
+      display: block;
     }
   }
 
@@ -98,14 +136,22 @@
     font-weight: 500;
     margin-top: 4px;
     line-height: 1.5; /* 150% */
+
+    @include mx.screen(lg) {
+      margin-bottom: 10px;
+    }
   }
 
   &__list {
     margin-top: 20px;
+
+    @include mx.screen(lg) {
+      margin-top: 0;
+    }
   }
 
   &__item--active > &__link,
-  &__item:hover > &__link{
+  &__item:hover > &__link {
     color: #0071dc;
     font-weight: 500;
   }
@@ -117,6 +163,10 @@
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.42; /* 142.857% */
+
+    @include mx.screen(lg) {
+      padding: 10px 0;
+    }
   }
 
   &__item--active .sub-menu {
@@ -155,5 +205,16 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding-left: 0;
+  }
+
+  @include mx.screen(lg) {
+    position: initial;
+    inset: initial;
+
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    padding-left: 0;
+
+    height: auto;
   }
 }

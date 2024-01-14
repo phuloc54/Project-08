@@ -1,6 +1,6 @@
 <div class="container">
   <div class="top-bar">
-    <div class="top-bar__more icon">
+    <div class="top-bar__more icon js-toggle" toggle-target="#navbar">
       <img src="./assets/icon/more.svg" alt="more" class="top-bar__more-icon" />
     </div>
     <!-- Logo -->
@@ -10,7 +10,10 @@
     </a>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav id="navbar" class="nav hide">
+      <button class="nav__close js-toggle" toggle-target="#navbar">
+        <img src="./assets/icon/arrow-left.svg" alt="" class="nav__close-icon" />
+      </button>
       <ul class="nav__menu js-dropdown-list">
         <li class="nav__item">
           <a href="#!" class="nav__link">
@@ -24,13 +27,13 @@
                 <div class="top-menu__main">
                   <!-- Menu column -->
                   <div class="menu-column">
-                    <div class="menu-column__icons">
+                    <div class="menu-column__icons d-lg-none">
                       <img src="./assets/img/category/cate-1.1.1.svg" alt="" class="menu-column__icon-1" />
                       <img src="./assets/img/category/cate-1.1.2.svg" alt="" class="menu-column__icon-2" />
                     </div>
 
                     <div class="menu-column__content">
-                      <h2 class="menu-column__title">All Departments</h2>
+                      <h2 class="menu-column__title d-lg-none">All Departments</h2>
 
                       <ul class="menu-column__list js-menu-list">
                         <li class="menu-column__item">
@@ -3154,6 +3157,9 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Overlay -->
+    <div class="overlay js-toggle" toggle-target="#navbar"></div>
 
     <!-- Actions -->
     <div class="top-act">

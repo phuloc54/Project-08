@@ -142,7 +142,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+a,
+img,
 input,
 button,
 textarea,
@@ -153,6 +154,7 @@ select {
   background: transparent;
   border: none;
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
