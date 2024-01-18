@@ -114,13 +114,24 @@ function handleActiveMenu() {
       if (!items.length) return;
 
       removeActive(menu);
-      items[0].classList.add(activeClass);
+      if (window.innerWidth > 991) items[0].classList.add(activeClass);
 
       Array.from(items).forEach((item) => {
+        // handle when hover on menu of DESKTOP
         item.onmouseenter = () => {
+          // if width of screen <= 991 -> it is tablet and mobile -> return: do nothing
           if (window.innerWidth <= 991) return;
           removeActive(menu);
           item.classList.add(activeClass);
+        };
+
+        // handle when click on menu of TABLET AND MOBILE
+        item.onclick = () => {
+          // if width of screen >= 991 -> it is desktop -> do nothing
+          if (window.innerWidth > 991) return;
+          removeActive(menu);
+          item.classList.add(activeClass);
+          item.scrollIntoView();
         };
       });
     });
@@ -161,3 +172,15 @@ function initJsToggle() {
     };
   });
 }
+
+window.addEventListener("template-loaded", () => {
+  const links = $$(".js-dropdown-list > li > a");
+
+  links.forEach((link) => {
+    link.onclick = () => {
+      if (window.innerWidth > 991) return;
+      const item = link.closest("li");
+      item.classList.toggle("nav__item--active");
+    };
+  });
+});
